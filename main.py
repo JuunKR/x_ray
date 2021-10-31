@@ -21,8 +21,8 @@ Adam = Adam(learning_rate= 3e-4)
 SGD = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 
 # 1.data
-x = np.load('../_data/csv/img.npy')
-y = np.load('../_data/csv/mask.npy')
+x = np.load('../_data/_npy/img.npy')
+y = np.load('../_data/_npy/mask.npy')
 
 x_train, x_test, y_train, y_test = train_test_split(x, y,
                                         train_size=0.8, random_state=seed, shuffle=True)
@@ -32,9 +32,9 @@ x_train, x_val, y_train, y_val = train_test_split(x_train, y_train,
 # plt.imshow(x_train[3:4])
 # plt.show()
 
-# plotTrainData(x_train, y_train, 'train')
-# plotTrainData(x_test, y_test, 'test')
-# plotTrainData(x_val, y_val, 'valid')
+plotTrainData(x_train, y_train, 'train')
+plotTrainData(x_test, y_test, 'test')
+plotTrainData(x_val, y_val, 'valid')
 
 # 2. model
 model = unet()

@@ -17,7 +17,7 @@ img = img_datagen.flow_from_directory(
     batch_size = 566,
     shuffle=False
 )
-np.save('../_data/csv/img.npy', arr=img[0][0])
+np.save('../_data/_npy/img.npy', arr=img[0][0])
 
 # y_data
 mask_datagen = ImageDataGenerator(
@@ -30,7 +30,7 @@ mask = mask_datagen.flow_from_directory(
     batch_size = 566,
     shuffle=False
 )
-np.save('../_data/csv/mask.npy', arr=mask[0][0])
+np.save('../_data/_npy/mask.npy', arr=mask[0][0])
 
 
 
