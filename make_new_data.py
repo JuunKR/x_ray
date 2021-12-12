@@ -5,13 +5,12 @@ from glob import glob
 
 
 def erosion(img):
-    kernel = np.ones((3,3), np.uint8)
-    dilate = cv2.dilate(img, kernel, iterations=1)
-    
-    kernel = np.ones((2,2), np.uint8)
-    erosion = cv2.erode(dilate, kernel, iterations=1)
+    # kernel = np.ones((3,3), np.uint8)
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (4,4))
+    dilation = cv2.dilate(img, kernel, iterations=2)
 
-    return erosion
+    kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (1,2))
+    erosion = cv2.erode(dilation, kernel, iterations=1)
 
 
 path = '../_data/'
